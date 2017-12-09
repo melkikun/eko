@@ -55,9 +55,9 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav pull-right mainNav">
-                        <li class="active"><a href="<?php echo base_url();?>">Halaman Utama</a></li>
-                        <li><a href="<?php echo base_url("about_us");?>">About Us</a></li>
-                        <li><a href="<?php echo base_url("logout");?>">Log Out</a></li>
+                        <li class="active"><a href="<?php echo base_url(); ?>">Halaman Utama</a></li>
+                        <li><a href="<?php echo base_url("about_us"); ?>">About Us</a></li>
+                        <li><a href="<?php echo base_url("logout"); ?>">Log Out</a></li>
 
                     </ul>
                 </div>
@@ -175,8 +175,8 @@
                                 });
                             }
                         }
-                        
-                        function simpanData(){
+
+                        function simpanData() {
                             var po = jQuery('#po option:selected').text();
                             var data1 = jQuery("#data1")[0].files[0];
                             var data2 = jQuery("#data2")[0].files[0];
@@ -213,7 +213,11 @@
                                         $('.loading-overlay').show();
                                     },
                                     success: function (response, textStatus, jqXHR) {
-                                        alert("berhasil simpan");
+                                        if (response.indexOf(false) == -1) {
+                                            alert("berhasil simpan");
+                                        } else {
+                                            alert("gagal simpan");
+                                        }
                                     },
                                     complete: function (jqXHR, textStatus) {
                                         $('.loading-overlay').hide();
