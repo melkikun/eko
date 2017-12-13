@@ -16,7 +16,8 @@ class ProcessController extends CI_Controller {
         //ambil library peramalan
         $this->load->library('perhitungan');
 //        ambil model datamodel
-        $this->load->model("DataModel");;
+        $this->load->model("DataModel");
+        ;
     }
 
     public function index() {
@@ -243,6 +244,8 @@ class ProcessController extends CI_Controller {
     public function simpanData() {
         $po = $this->input->post("po");
         $total1 = array();
+        $bulan1 = array();
+        $tahun1 = 2013;
         $file1 = $_FILES['data1']['tmp_name'];
         $excelReader = PHPExcel_IOFactory::createReaderForFile($file1);
         $excelObj = $excelReader->load($file1);
@@ -257,11 +260,14 @@ class ProcessController extends CI_Controller {
                 $jumlah1 += doubleval($worksheet->getCell('AB' . $row)->getValue());
                 $jumlah1 += doubleval($worksheet->getCell('AI' . $row)->getValue());
             }
+            array_push($bulan1, $excelObj->getSheet($i)->getTitle());
             array_push($total1, $jumlah1);
         }
 
         //proses data 2
         $total2 = array();
+        $bulan2 = array();
+        $tahun2 = 2014;
         $file2 = $_FILES['data2']['tmp_name'];
         $excelReader = PHPExcel_IOFactory::createReaderForFile($file2);
         $excelObj = $excelReader->load($file2);
@@ -276,11 +282,14 @@ class ProcessController extends CI_Controller {
                 $jumlah2 += doubleval($worksheet->getCell('AB' . $row)->getValue());
                 $jumlah2 += doubleval($worksheet->getCell('AI' . $row)->getValue());
             }
+            array_push($bulan2, $excelObj->getSheet($i)->getTitle());
             array_push($total2, $jumlah2);
         }
 
         //proses data 3
         $total3 = array();
+        $bulan3 = array();
+        $tahun3 = 2015;
         $file3 = $_FILES['data3']['tmp_name'];
         $excelReader = PHPExcel_IOFactory::createReaderForFile($file3);
         $excelObj = $excelReader->load($file3);
@@ -295,11 +304,14 @@ class ProcessController extends CI_Controller {
                 $jumlah3 += doubleval($worksheet->getCell('AB' . $row)->getValue());
                 $jumlah3 += doubleval($worksheet->getCell('AI' . $row)->getValue());
             }
+            array_push($bulan3, $excelObj->getSheet($i)->getTitle());
             array_push($total3, $jumlah3);
         }
 
         //proses data 4
         $total4 = array();
+        $bulan4 = array();
+        $tahun4 = 2016;
         $file4 = $_FILES['data4']['tmp_name'];
         $excelReader = PHPExcel_IOFactory::createReaderForFile($file4);
         $excelObj = $excelReader->load($file4);
@@ -314,11 +326,14 @@ class ProcessController extends CI_Controller {
                 $jumlah4 += doubleval($worksheet->getCell('AB' . $row)->getValue());
                 $jumlah4 += doubleval($worksheet->getCell('AI' . $row)->getValue());
             }
+            array_push($bulan4, $excelObj->getSheet($i)->getTitle());
             array_push($total4, $jumlah4);
         }
 
         //proses data 5
         $total5 = array();
+        $bulan5 = array();
+        $tahun5 = 2016;
         $file5 = $_FILES['data5']['tmp_name'];
         $excelReader = PHPExcel_IOFactory::createReaderForFile($file5);
         $excelObj = $excelReader->load($file5);
@@ -333,14 +348,29 @@ class ProcessController extends CI_Controller {
                 $jumlah5 += doubleval($worksheet->getCell('AB' . $row)->getValue());
                 $jumlah5 += doubleval($worksheet->getCell('AI' . $row)->getValue());
             }
+            array_push($bulan5, $excelObj->getSheet($i)->getTitle());
             array_push($total5, $jumlah5);
         }
 
         $data = array(
             "po" => $po,
-            "data" => array_merge($total1, $total2, $total3, $total4, $total5),
+            "tahun1" => $tahun1,
+            "tahun2" => $tahun2,
+            "tahun3" => $tahun3,
+            "tahun4" => $tahun4,
+            "tahun5" => $tahun5,
+            "bulan1" => $bulan1,
+            "bulan2" => $bulan2,
+            "bulan3" => $bulan3,
+            "bulan4" => $bulan4,
+            "bulan5" => $bulan5,
+            "data1" => $total1,
+            "data2" => $total2,
+            "data3" => $total3,
+            "data4" => $total4,
+            "data5" => $total5
         );
-        
+
         echo json_encode($this->DataModel->simpanEko($data));
     }
 
