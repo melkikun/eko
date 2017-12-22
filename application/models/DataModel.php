@@ -87,4 +87,10 @@ class DataModel extends CI_Model {
         return $query->result_array();
     }
 
+    public function deletePo($po) {
+        $this->db->where('nama', $po);
+        $delete = $this->db->delete('po');
+        return $delete;
+    }
+
 }

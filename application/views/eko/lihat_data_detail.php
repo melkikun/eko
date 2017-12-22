@@ -1,7 +1,7 @@
 <h4>TAMPILAN DATA AWAL UNTUK  <?php echo strtoupper($po); ?></h4>
 
 <?php
-if(count($hasil) == 0){
+if (count($hasil) == 0) {
     echo "<h4>OPPPSS... DATA KOSONG.. ^^</h4>";
     exit();
 }
@@ -215,3 +215,36 @@ for ($i = 48; $i < count($hasil); $i++) {
         </div><!--grey box -->
     </div><!--/span3-->
 </div>
+<div class="row">
+    <div class="col-sm-12">
+        <button class="btn btn-danger col-sm-12" onclick="HapusData();">HAPUS DATA DARI DATABASE</button>
+    </div>
+</div>
+
+<script>
+    function HapusData() {
+        var po = "<?php echo $po; ?>";
+        var cf = confirm("Apa Anda Yakin Menghapus seluruh data dari <?php echo "$po"; ?>");
+        if (cf == true) {
+            $.ajax({
+                type: 'POST',
+                url: "<?php echo base_url("proses/delete"); ?>",
+                dataType: 'JSON',
+                data: {po: po},
+                beforeSend: function (xhr) {
+
+                },
+                success: function (response, textStatus, jqXHR) {
+                    if (response == true) {
+                        alert("berhasil delete")
+                        window.location.reload();
+                    } else {
+                        alert("gagal delete");
+                    }
+                },
+                complete: function (jqXHR, textStatus) {
+                }
+            });
+        }
+    }
+</script>

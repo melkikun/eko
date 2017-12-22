@@ -384,5 +384,11 @@ class ProcessController extends CI_Controller {
         $hasil = $this->load->view("eko/lihat_data_detail", $kirim, TRUE);
         echo $hasil;
     }
+    
+    public function deleteData(){
+        $po = $this->input->post("po");
+        $delete = $this->DataModel->deletePo($po);
+        echo json_encode($delete);
+    }
 
 }

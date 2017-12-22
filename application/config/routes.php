@@ -64,4 +64,5 @@ $route['proses/input']='ProcessController/getData';
 $route['proses/kesimpulan'] = "ProcessController/getKesimpulan";
 $route['proses/lihat_data']='ProcessController/lihatData';
 $route['proses/simpan']='ProcessController/simpanData';
+$route['proses/delete']='ProcessController/deleteData';
 //$route['data/(:any)'] = 'ProcessController/lihatData/$1';
