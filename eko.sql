@@ -13,15 +13,14 @@
 
 
 -- Dumping database structure for eko
-DROP DATABASE IF EXISTS `eko`;
 CREATE DATABASE IF NOT EXISTS `eko` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `eko`;
 
 -- Dumping structure for table eko.data_po
-DROP TABLE IF EXISTS `data_po`;
 CREATE TABLE IF NOT EXISTS `data_po` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_po` int(11) DEFAULT NULL,
+  `bulan` varchar(50) DEFAULT NULL,
   `tahun` int(11) DEFAULT NULL,
   `rupiah` double DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -31,7 +30,6 @@ CREATE TABLE IF NOT EXISTS `data_po` (
 
 -- Data exporting was unselected.
 -- Dumping structure for table eko.po
-DROP TABLE IF EXISTS `po`;
 CREATE TABLE IF NOT EXISTS `po` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama` varchar(50) DEFAULT NULL,
@@ -40,7 +38,6 @@ CREATE TABLE IF NOT EXISTS `po` (
 
 -- Data exporting was unselected.
 -- Dumping structure for table eko.users
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL DEFAULT '0',

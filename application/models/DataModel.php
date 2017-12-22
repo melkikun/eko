@@ -77,4 +77,14 @@ class DataModel extends CI_Model {
         return $response;
     }
 
+    public function AmbilEko($po) {
+        $this->db->select('po.*,dpo.*');
+        $this->db->from('po po');
+        $this->db->join('data_po dpo', 'dpo.id_po = po.id', 'inner');
+        $this->db->where("po.nama", "$po");
+        $this->db->order_by("dpo.id", "asc");
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
 }

@@ -83,7 +83,14 @@
                     </div>
                 </div>
             </div>
-
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="grey-box-icon">
+                        <div  id="detail-data">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
@@ -99,13 +106,12 @@
                                 $.ajax({
                                     type: 'GET',
                                     url: "<?php echo base_url("proses/lihat_data"); ?>",
-                                    dataType: 'JSON',
                                     data: {po: po},
                                     beforeSend: function (xhr) {
-
+                                        $('#detail-data').empty();
                                     },
                                     success: function (response, textStatus, jqXHR) {
-
+                                        $('#detail-data').html(response);
                                     },
                                     complete: function (jqXHR, textStatus) {
 
