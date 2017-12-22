@@ -1,0 +1,9 @@
+jika ada error tentang database maka :
+buka folder application, lalu ke folder config
+setelah itu buka file database.
+ganti baris : 
+'password' => 'wen',
+menjadi 
+'password' => '',
+
+kosongkan passwordnya. 
