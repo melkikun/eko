@@ -1,4 +1,4 @@
-<h4>TAMPILAN INPUT DATA AWAL UNTUK  <?php echo strtoupper($po); ?></h4>
+<h4>TAMPILAN DATA AWAL UNTUK  <?php echo strtoupper($po); ?></h4>
 
 <?php
 if(count($hasil) == 0){
@@ -69,7 +69,7 @@ for ($i = 48; $i < count($hasil); $i++) {
                                 <?php echo ($i + 1); ?>
                             </td>
                             <td class="text-center">
-                                <?php echo $bulan1[$i]; ?>
+                                <?php echo $bulan1[$i] . " " . $tahun1[$i]; ?>
                             </td>
                             <td class="text-center">
                                 <?php echo number_format($data1[$i], 2); ?>
@@ -102,7 +102,7 @@ for ($i = 48; $i < count($hasil); $i++) {
                                 <?php echo ($i + 1); ?>
                             </td>
                             <td class="text-center">
-                                <?php echo $bulan2[$i]; ?>
+                                <?php echo $bulan2[$i] . " " . $tahun2[$i]; ?>
                             </td>
                             <td class="text-center">
                                 <?php echo number_format($data2[$i], 2); ?>
@@ -135,7 +135,7 @@ for ($i = 48; $i < count($hasil); $i++) {
                                 <?php echo ($i + 1); ?>
                             </td>
                             <td class="text-center">
-                                <?php echo $bulan3[$i]; ?>
+                                <?php echo $bulan3[$i] . " " . $tahun3[$i]; ?>
                             </td>
                             <td class="text-center">
                                 <?php echo number_format($data3[$i], 2); ?>
@@ -168,7 +168,7 @@ for ($i = 48; $i < count($hasil); $i++) {
                                 <?php echo ($i + 1); ?>
                             </td>
                             <td class="text-center">
-                                <?php echo $bulan4[$i]; ?>
+                                <?php echo $bulan4[$i] . " " . $tahun4[$i]; ?>
                             </td>
                             <td class="text-center">
                                 <?php echo number_format($data4[$i], 2); ?>
@@ -201,7 +201,7 @@ for ($i = 48; $i < count($hasil); $i++) {
                                 <?php echo ($i + 1); ?>
                             </td>
                             <td class="text-center">
-                                <?php echo $bulan5[$i]; ?>
+                                <?php echo $bulan5[$i] . " " . $tahun5[$i]; ?>
                             </td>
                             <td class="text-center">
                                 <?php echo number_format($data5[$i], 2); ?>
