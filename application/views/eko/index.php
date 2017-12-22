@@ -56,6 +56,7 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav pull-right mainNav">
                         <li class="active"><a href="<?php echo base_url(); ?>">Halaman Utama</a></li>
+                        <li><a href="<?php echo base_url("lihat_data"); ?>">Lihat Data</a></li>
                         <li><a href="<?php echo base_url("about_us"); ?>">About Us</a></li>
                         <li><a href="<?php echo base_url("logout"); ?>">Log Out</a></li>
 

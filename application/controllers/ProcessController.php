@@ -373,5 +373,10 @@ class ProcessController extends CI_Controller {
 
         echo json_encode($this->DataModel->simpanEko($data));
     }
+    
+    public function lihatData(){
+        $po = $this->input->get("po");
+        echo $po;
+    }
 
 }

@@ -59,8 +59,9 @@ $route['user/register']='UserController/userRegister';
 $route['user/login']='UserController/userLogin';
 
 $route['about_us']='UserController/about';
+$route['lihat_data']='UserController/lihatData';
 $route['proses/input']='ProcessController/getData';
 $route['proses/kesimpulan'] = "ProcessController/getKesimpulan";
-//$route['proses/proses-data']='ProcessController/prosesData';
+$route['proses/lihat_data']='ProcessController/lihatData';
 $route['proses/simpan']='ProcessController/simpanData';
 //$route['data/(:any)'] = 'ProcessController/lihatData/$1';

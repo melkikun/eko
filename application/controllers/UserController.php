@@ -113,11 +113,8 @@ class UserController extends CI_Controller {
     
     function lihatData(){
         $this->cekSession();
-        $data = $this->DataModel->ambilData();
-        $sidebar = $this->load->view('template/sidebar', '', TRUE);
-        $header = $this->load->view('template/header', '', TRUE);
-        $footer = $this->load->view('template/footer', '', TRUE);
-        $this->load->view('lihat_data', compact('sidebar', 'header', 'footer', 'data'));
+//        $data = $this->DataModel->ambilData();
+        $this->load->view("eko/lihat_data");
     }
     
     
