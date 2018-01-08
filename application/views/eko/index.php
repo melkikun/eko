@@ -127,6 +127,7 @@
         <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script> 
         <script src="<?php echo base_url(); ?>assets/js/jquery.dataTables.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/highcharts.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/exporting.js"></script>
         <script>
                         $('.loading-overlay').hide();
                         var bulan = ["januari", "februari", 'maret', 'april', 'mei', 'juni', 'juli', 'agustus', 'september', "oktober", 'november', 'desember'];

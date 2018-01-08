@@ -123,5 +123,4 @@ class UserController extends CI_Controller {
         $this->load->view("eko/about_us");
     }
     
-
 }

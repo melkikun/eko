@@ -492,6 +492,7 @@ $dataBulan = [
                 </div>
             </div>
             <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="print();">Print ke .Word</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -802,6 +803,10 @@ $dataBulan = [
             ]
         });
         $('#myModal').modal('show');
+    }
+    
+    function print(){
+        window.open();
     }
 </script>
 <style>
