@@ -85,7 +85,7 @@ and open the template in the editor.
             }
         </style>
     </head>
-    <body>
+    <body onload="window.print(); window.close();">
         <h1 class="text-center">HASIL KESIMPULAN UNTUK <?php echo "$po"; ?></h1>
         <!--KESIMPULAN TEXT-->
         <div>
