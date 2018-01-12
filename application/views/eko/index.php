@@ -203,28 +203,31 @@
                             } else if (data5 == null) {
                                 alert("data 2017 harus diisi")
                             } else {
-                                jQuery.ajax({
-                                    url: "<?php echo base_url("proses/simpan"); ?>",
-                                    type: 'POST',
-                                    data: formData,
-                                    async: false,
-                                    cache: false,
-                                    contentType: false,
-                                    processData: false,
-                                    beforeSend: function (xhr) {
-                                        $('.loading-overlay').show();
-                                    },
-                                    success: function (response, textStatus, jqXHR) {
-                                        if (response.indexOf(false) == -1) {
-                                            alert("berhasil simpan");
-                                        } else {
-                                            alert("gagal simpan");
+                                var cf = confirm("Apa anda ingin menyimpan data awal ke database ? ");
+                                if (cf == true) {
+                                    jQuery.ajax({
+                                        url: "<?php echo base_url("proses/simpan"); ?>",
+                                        type: 'POST',
+                                        data: formData,
+                                        async: false,
+                                        cache: false,
+                                        contentType: false,
+                                        processData: false,
+                                        beforeSend: function (xhr) {
+                                            $('.loading-overlay').show();
+                                        },
+                                        success: function (response, textStatus, jqXHR) {
+                                            if (response.indexOf(false) == -1) {
+                                                alert("berhasil simpan");
+                                            } else {
+                                                alert("gagal simpan");
+                                            }
+                                        },
+                                        complete: function (jqXHR, textStatus) {
+                                            $('.loading-overlay').hide();
                                         }
-                                    },
-                                    complete: function (jqXHR, textStatus) {
-                                        $('.loading-overlay').hide();
-                                    }
-                                });
+                                    });
+                                }
                             }
                         }
         </script>

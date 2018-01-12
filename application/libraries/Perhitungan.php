@@ -35,7 +35,11 @@ class Perhitungan {
     public function nilaiError($dataAwal, $peramalanAlpha){
         $hasil = array();
         for($i = 0; $i < count($dataAwal); $i++){
-            array_push($hasil, $peramalanAlpha[$i]-$dataAwal[$i]);
+            $pengurangan = $peramalanAlpha[$i]-$dataAwal[$i];
+            if($pengurangan == 0){
+                $pengurangan =0.1;
+            }
+            array_push($hasil, $pengurangan);
         }
         return $hasil;
     }

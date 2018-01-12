@@ -67,7 +67,6 @@ $dataBulan = [
     <div class="row">
         <div class="col-md-4">
             <div class="grey-box-icon">
-                <h4>Tahun 2013</h4>
                 <table class="table table-striped table-bordered" id="table-2013">
                     <thead>
                         <tr>
@@ -418,6 +417,7 @@ $dataBulan = [
                             <th class="text-center" style="color: #ac2925;"><?php echo number_format($mse['mse07'], 2); ?></th>
                             <th class="text-center" style="color: #ac2925;"><?php echo number_format($mse['mse08'], 2); ?></th>
                             <th class="text-center" style="color: #ac2925;"><?php echo number_format($mse['mse09'], 2); ?></th>
+                        </tr>
                     </tfoot>
                 </table>
             </div><!--grey box -->
@@ -804,9 +804,32 @@ $dataBulan = [
         });
         $('#myModal').modal('show');
     }
-    
-    function print(){
-        window.open();
+
+    function print() {
+        var po = jQuery('#po option:selected').text();
+        var cf = confirm("Apa anda akan print halaman ini ke word?");
+        if (cf == true) {
+            jQuery.ajax({
+                type: 'GET',
+                url: "<?php echo base_url("proses/print"); ?>",
+                data: {po: po},
+                dataType: 'text',
+                beforeSend: function (xhr) {
+
+                },
+                success: function (response, textStatus, jqXHR) {
+                    if (response == "0") {
+                        alert("Maaf, untuk export ke word anda harus simpan data awal terlebih dahulu");
+                    } else {
+                        window.open("<?php echo base_url("printword"); ?>/" + po, "", "width=400,height=400");
+                    }
+                },
+                complete: function (jqXHR, textStatus) {
+
+                }
+            });
+        }
+//        window.open();
     }
 </script>
 <style>

@@ -92,5 +92,21 @@ class DataModel extends CI_Model {
         $delete = $this->db->delete('po');
         return $delete;
     }
-
+    
+    public function cekPo($po){
+        $this->db->where('nama', $po);
+        $query = $this->db->get('po');
+        return $query->result_array();
+    }
+    
+    
+    public function ambilDataMurni($po){
+        $this->db->select('dpo.rupiah');
+        $this->db->from('po po');
+        $this->db->join('data_po dpo', 'dpo.id_po = po.id', 'inner');
+        $this->db->where("po.nama", "$po");
+        $this->db->order_by("dpo.id", "asc");
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 }
