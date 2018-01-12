@@ -13,7 +13,6 @@ class ProcessController extends CI_Controller {
         $this->load->helper(array('form', 'url'));
         //ambil library excel
         $this->load->library('excel');
-        $this->load->library('phpword');
         //ambil library peramalan
         $this->load->library('perhitungan');
 //        ambil model datamodel

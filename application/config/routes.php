@@ -67,4 +67,4 @@ $route['proses/lihat_data'] = 'ProcessController/lihatData';
 $route['proses/simpan'] = 'ProcessController/simpanData';
 $route['proses/delete'] = 'ProcessController/deleteData';
 $route['proses/print'] = "ProcessController/printData";
-$route['printword/(:any)'] = 'ProcessController/printWord/$1';
+//$route['printword/(:any)'] = 'ProcessController/printWord/$1';
