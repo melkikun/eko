@@ -480,16 +480,16 @@ $dataBulan = [
                 <div class="row col-sm-12">
                     <div id="grafik-peramalan"></div>
                 </div>
-                <div class="row col-sm-12">
-                    <div id="grafik-aktual"></div>
-                </div>
+                <!--                <div class="row col-sm-12">
+                                    <div id="grafik-aktual"></div>
+                                </div>-->
 
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <div id="grafik-aktual-2017"></div>
                 </div>
-                <div class="col-sm-6">
-                    <div id="grafik-peramalan-2017"></div>
-                </div>
+                <!--                <div class="col-sm-12">
+                                    <div id="grafik-peramalan-2017"></div>
+                                </div>-->
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" onclick="print();">Print ke .Word</button>
@@ -530,7 +530,7 @@ $dataBulan = [
                 type: 'line'
             },
             title: {
-                text: 'Grafik Peramalan Single Exponensial Smoothing'
+                text: 'Grafik Single Exponensial Smoothing'
             },
             subtitle: {
                 text: ''
@@ -616,152 +616,112 @@ $dataBulan = [
                 {
                     name: 'Data Peramalan',
                     data: peramalan01
-                }
-            ]
-        });
-        Highcharts.chart('grafik-aktual', {
-            chart: {
-                type: 'line'
-            },
-            title: {
-                text: 'Grafik Aktual Single Exponensial Smoothing'
-            },
-            subtitle: {
-                text: ''
-            },
-            xAxis: {
-                categories: [
-                    'Jan 2013',
-                    'Feb 2013',
-                    'Mar 2013',
-                    'Apr 2013',
-                    'May 2013',
-                    'Jun 2013',
-                    'Jul 2013',
-                    'Aug 2013',
-                    'Sep 2013',
-                    'Oct 2013',
-                    'Nov 2013',
-                    'Dec 2013',
-                    'Jan 2014',
-                    'Feb 2014',
-                    'Mar 2014',
-                    'Apr 2014',
-                    'May 2014',
-                    'Jun 2014',
-                    'Jul 2014',
-                    'Aug 2014',
-                    'Sep 2014',
-                    'Oct 2014',
-                    'Nov 2014',
-                    'Dec 2014',
-                    'Jan 2015',
-                    'Feb 2015',
-                    'Mar 2015',
-                    'Apr 2015',
-                    'May 2015',
-                    'Jun 2015',
-                    'Jul 2015',
-                    'Aug 2015',
-                    'Sep 2015',
-                    'Oct 2015',
-                    'Nov 2015',
-                    'Dec 2015',
-                    'Jan 2016',
-                    'Feb 2016',
-                    'Mar 2016',
-                    'Apr 2016',
-                    'May 2016',
-                    'Jun 2016',
-                    'Jul 2016',
-                    'Aug 2016',
-                    'Sep 2016',
-                    'Oct 2016',
-                    'Nov 2016',
-                    'Dec 2016',
-                    'Jan 2017',
-                    'Feb 2017',
-                    'Mar 2017',
-                    'Apr 2017',
-                    'May 2017',
-                    'Jun 2017',
-                    'Jul 2017',
-                    'Aug 2017',
-                    'Sep 2017',
-                    'Oct 2017'
-                ]
-            },
-            yAxis: {
-                title: {
-                    text: 'Data Pendapatan Bus'
-                }
-            },
-            plotOptions: {
-                line: {
-                    dataLabels: {
-                        enabled: true
-                    },
-                    enableMouseTracking: false
-                }
-            },
-            series: [
+                },
                 {
                     name: 'Data Aktual',
                     data: dataAwal
                 }
             ]
         });
+//        Highcharts.chart('grafik-aktual', {
+//            chart: {
+//                type: 'line'
+//            },
+//            title: {
+//                text: 'Grafik Aktual Single Exponensial Smoothing'
+//            },
+//            subtitle: {
+//                text: ''
+//            },
+//            xAxis: {
+//                categories: [
+//                    'Jan 2013',
+//                    'Feb 2013',
+//                    'Mar 2013',
+//                    'Apr 2013',
+//                    'May 2013',
+//                    'Jun 2013',
+//                    'Jul 2013',
+//                    'Aug 2013',
+//                    'Sep 2013',
+//                    'Oct 2013',
+//                    'Nov 2013',
+//                    'Dec 2013',
+//                    'Jan 2014',
+//                    'Feb 2014',
+//                    'Mar 2014',
+//                    'Apr 2014',
+//                    'May 2014',
+//                    'Jun 2014',
+//                    'Jul 2014',
+//                    'Aug 2014',
+//                    'Sep 2014',
+//                    'Oct 2014',
+//                    'Nov 2014',
+//                    'Dec 2014',
+//                    'Jan 2015',
+//                    'Feb 2015',
+//                    'Mar 2015',
+//                    'Apr 2015',
+//                    'May 2015',
+//                    'Jun 2015',
+//                    'Jul 2015',
+//                    'Aug 2015',
+//                    'Sep 2015',
+//                    'Oct 2015',
+//                    'Nov 2015',
+//                    'Dec 2015',
+//                    'Jan 2016',
+//                    'Feb 2016',
+//                    'Mar 2016',
+//                    'Apr 2016',
+//                    'May 2016',
+//                    'Jun 2016',
+//                    'Jul 2016',
+//                    'Aug 2016',
+//                    'Sep 2016',
+//                    'Oct 2016',
+//                    'Nov 2016',
+//                    'Dec 2016',
+//                    'Jan 2017',
+//                    'Feb 2017',
+//                    'Mar 2017',
+//                    'Apr 2017',
+//                    'May 2017',
+//                    'Jun 2017',
+//                    'Jul 2017',
+//                    'Aug 2017',
+//                    'Sep 2017',
+//                    'Oct 2017'
+//                ]
+//            },
+//            yAxis: {
+//                title: {
+//                    text: 'Data Pendapatan Bus'
+//                }
+//            },
+//            plotOptions: {
+//                line: {
+//                    dataLabels: {
+//                        enabled: true
+//                    },
+//                    enableMouseTracking: false
+//                }
+//            },
+//            series: [
+//                {
+//                    name: 'Data Aktual',
+//                    data: dataAwal
+//                }
+//            ]
+//        });
         //grafik 2017
         Highcharts.chart('grafik-aktual-2017', {
             chart: {
                 type: 'line'
             },
             title: {
-                text: 'Grafik Aktual Single Exponensial Smoothing Tahun 2017'
-            },
-            subtitle: {
-                text: ''
-            },
-            xAxis: {
-                categories: [
-                    'Jan 2017',
-                    'Feb 2017',
-                    'Mar 2017',
-                    'Apr 2017',
-                    'May 2017',
-                    'Jun 2017',
-                    'Jul 2017',
-                    'Aug 2017',
-                    'Sep 2017',
-                    'Oct 2017'
-                ]
-            },
-            yAxis: {
-                title: {
-                    text: 'Data Pendapatan Bus'
-                }
-            },
-            plotOptions: {
-                line: {
-                    dataLabels: {
-                        enabled: true
-                    },
-                    enableMouseTracking: false
-                }
-            },
-            series: [
-                {
-                    name: 'Data Aktual 2017',
-                    data: dataAktual2017
-                }
-            ]
-        });
-        Highcharts.chart('grafik-peramalan-2017', {
-            chart: {
-                type: 'line'
-            },
-            title: {
-                text: 'Grafik Peramalan Single Exponensial Smoothing Tahun 2017'
+                text: 'Grafik Single Exponensial Smoothing Tahun 2017'
             },
             subtitle: {
                 text: ''
@@ -797,11 +757,61 @@ $dataBulan = [
             },
             series: [
                 {
+                    name: 'Data Aktual 2017',
+                    data: dataAktual2017
+                },
+                 {
                     name: 'Data Peramalan 2017',
                     data: dataPeramalan2017
                 }
             ]
         });
+//        Highcharts.chart('grafik-peramalan-2017', {
+//            chart: {
+//                type: 'line'
+//            },
+//            title: {
+//                text: 'Grafik Peramalan Single Exponensial Smoothing Tahun 2017'
+//            },
+//            subtitle: {
+//                text: ''
+//            },
+//            xAxis: {
+//                categories: [
+//                    'Jan 2017',
+//                    'Feb 2017',
+//                    'Mar 2017',
+//                    'Apr 2017',
+//                    'May 2017',
+//                    'Jun 2017',
+//                    'Jul 2017',
+//                    'Aug 2017',
+//                    'Sep 2017',
+//                    'Oct 2017',
+//                    "Nov 2017",
+//                    "Dec 2017"
+//                ]
+//            },
+//            yAxis: {
+//                title: {
+//                    text: 'Data Pendapatan Bus'
+//                }
+//            },
+//            plotOptions: {
+//                line: {
+//                    dataLabels: {
+//                        enabled: true
+//                    },
+//                    enableMouseTracking: false
+//                }
+//            },
+//            series: [
+//                {
+//                    name: 'Data Peramalan 2017',
+//                    data: dataPeramalan2017
+//                }
+//            ]
+//        });
         $('#myModal').modal('show');
     }
 
